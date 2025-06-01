@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:todo_list_app/ui/main/main_page.dart';
+import 'package:todo_list_app/ui/category/CategoryScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.lato().fontFamily,
         useMaterial3: true,
       ),
-      home: const MainPage(),
+      home: const CategoryScreen(),
     );
   }
 }

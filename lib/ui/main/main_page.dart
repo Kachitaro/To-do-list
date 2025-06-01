@@ -36,9 +36,11 @@ class _MainPageState extends State<MainPage> {
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentPage,
         onTap: (index) {
-          setState(() {
-            _currentPage = index;
-          });
+          if (index != 2) {
+            setState(() {
+              _currentPage = index;
+            });
+          }
         },
         items: [
           BottomNavigationBarItem(
@@ -117,6 +119,19 @@ class _MainPageState extends State<MainPage> {
           ),
         ],
       ),
+      floatingActionButton: Container(
+        width: 64,
+        height: 64,
+        decoration: BoxDecoration(
+          color: Color(0xFF8687E7),
+          borderRadius: BorderRadius.circular(32),
+        ),
+        child: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.add, size: 30, color: Colors.white),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

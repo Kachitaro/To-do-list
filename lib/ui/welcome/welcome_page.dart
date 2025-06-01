@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
-  const WelcomePage({super.key});
+  final bool isFirstInstallApp;
+  const WelcomePage({super.key, required this.isFirstInstallApp});
 
   @override
   Widget build(BuildContext context) {
@@ -9,12 +10,16 @@ class WelcomePage extends StatelessWidget {
       backgroundColor: const Color(0xFF121212),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back_ios, size: 24, color: Colors.white),
-        ),
+        leading: isFirstInstallApp
+            ? IconButton(
+                onPressed: () {
+                  if (Navigator.canPop(context)) {
+                    Navigator.pop(context);
+                  }
+                },
+                icon: Icon(Icons.arrow_back_ios, size: 24, color: Colors.white),
+              )
+            : null,
       ),
       body: SafeArea(
         child: Column(

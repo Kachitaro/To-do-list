@@ -102,15 +102,10 @@ class OnboardingChildPage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 42),
-          Container(
-            child: Text(
-              data.content,
-              style: TextStyle(
-                color: Colors.white.withAlpha(195),
-                fontSize: 16,
-              ),
-              textAlign: TextAlign.center,
-            ),
+          Text(
+            data.content,
+            style: TextStyle(color: Colors.white.withAlpha(195), fontSize: 16),
+            textAlign: TextAlign.center,
           ),
         ],
       ),
