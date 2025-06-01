@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:todo_list_app/ui/onboarding/onboarding_page_view.dart';
+import 'package:todo_list_app/ui/main/main_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.lato().fontFamily,
         useMaterial3: true,
       ),
-      home: const OnboardingPageView(),
+      home: const MainPage(),
     );
   }
 }
