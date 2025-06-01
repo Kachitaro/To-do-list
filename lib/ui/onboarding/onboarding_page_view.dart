@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list_app/ui/onboarding/onboarding_child_page.dart';
+import 'package:todo_list_app/ui/welcome/welcome_page.dart';
 import 'package:todo_list_app/utils/onboarding_position.dart';
 
 class OnboardingPageView extends StatefulWidget {
@@ -24,7 +25,7 @@ class _OnboardingPageViewState extends State<OnboardingPageView> {
             index: index,
             nextOnPressed: () {
               if (index == onboardingDataList.length - 1) {
-                print({"next App"});
+                _gotoWelcomePage();
               } else {
                 _pageController.jumpToPage(index + 1);
               }
@@ -35,11 +36,18 @@ class _OnboardingPageViewState extends State<OnboardingPageView> {
               }
             },
             skipOnPressed: () {
-              print({"next App"});
+              _gotoWelcomePage();
             },
           );
         },
       ),
+    );
+  }
+
+  void _gotoWelcomePage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const WelcomePage()),
     );
   }
 }
